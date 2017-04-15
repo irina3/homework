@@ -1,5 +1,4 @@
-function f(){
-	var x="[objct ${name}]";
-	x=x.slice(7,14);
-	return x;
+function getName(str) {
+	return str=str.slice(7,str.length-1);
 }
+getName('[object Ara]');
