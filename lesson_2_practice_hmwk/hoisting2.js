@@ -12,7 +12,7 @@
             hours,
             minutes,
             seconds,
-            diffDate,
+            diffDate;
             if (!fromDate) throw new Error('Date should be specified');
                 startDate = new Date(1970, 0, 1, 0).getTime(),
                 now = new Date(),

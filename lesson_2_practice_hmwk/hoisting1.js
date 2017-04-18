@@ -1,23 +1,23 @@
-
 var hsvtorgb;
 hsvtorgb = function(h, s, v) {
-var i;
-var f;
-var p;
-var q;
-var t;
+	var i;
+	var f;
+	var p;
+	var q;
+	var t;
     function format(r, g, b) {
         return "rgb(" + Math.round(r * 255) + "," + Math.round(g * 255) + "," + Math.round(b * 255) + ")";
     }
     if (s == 0){
 	    return format(v, v, v);
-		h = ((h + 360) % 360) / 60;
-        i = Math.floor(h);
-	    f = h - i;
-	    p = v * (1 - s);
-	    q = v * (1 - s * f);
-	    t = v * (1 - s * (1 - f));
-    }
+	}   
+	h = ((h + 360) % 360) / 60;
+    i = Math.floor(h);
+	f = h - i;
+	p = v * (1 - s);
+	q = v * (1 - s * f);
+	t = v * (1 - s * (1 - f));
+    
 	switch(i) {
         case 0:
 		    r = v; g = t; b = p;
