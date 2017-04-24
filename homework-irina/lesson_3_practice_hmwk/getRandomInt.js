@@ -1,6 +1,8 @@
 (function () {
     'use strict';
-    function getRandomInt(max){
-        return +(Math.random()*max).toString(10).slice(0,m..toString(10).length);
+    function getRandomInt(max) {
+        var int=parseInt((Math.random() * max));
+        return int;
     }
+    window.getRandomInt = getRandomInt;
 })();
