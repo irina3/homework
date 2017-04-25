@@ -1,9 +1,9 @@
 var accidentTransportation = {
-        date : Date(),
-        listTransportationInvolved : ['Boing737','Airbus A319','MIG-29'],
-        damagedPeopleNumber : 10,
-        reasonAccident : "The accident happened because the driver of Fiat was drunk.",
-        toString:function(){
+        date : '',
+        listTransportationInvolved : [],
+        damagedPeopleNumber : new number,
+        reasonAccident : new String();"The accident happened because the driver of Fiat was drunk.",
+        toString : function(){
             return 'Crash happened on' + this.date + ' . ' + this.reasonAccident + '.' + 'damaged people number is' + this.DamagedPeopleNumber;
         }
     }
@@ -22,7 +22,7 @@ var accidentTransportation = {
         }
     }
     var extendsAccidentTransportation=Object.create(accidentTransportation);
-        extendsAccidentTransportation.problemOccurredAccident='10 km';
+        extendsAccidentTransportation.problemOccurredAccident='';
     var civilianAviationAccident= Object.create(extendsAccidentTransportation);
         civilianAviationAccident.nameAirline='Alitalia';
         civilianAviationAccident.listTranspotationInvolved=['Boing737' , 'Airbus A319'];
