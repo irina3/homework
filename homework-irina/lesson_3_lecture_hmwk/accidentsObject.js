@@ -35,5 +35,6 @@ var accidentTransportation = {
         Object.defineProperty(civilianAviationAccident,'confInform',{value:'information' writeble:false});
         Object.getPrototypeOf(militaryAviationAccidents);
         militaryAviationAccidents.__proto__;
+    
 
 

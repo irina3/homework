@@ -8,4 +8,4 @@
             return results;
         };
         window.map = map;
-    })();
+})();

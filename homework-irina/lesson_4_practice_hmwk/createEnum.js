@@ -1,19 +1,21 @@
 (function () {
     'use strict';
     function createEnum(arg) {
-        argu = Object.create(argument);
-            for (i in arg) {
-                if (typeof arg[i] === 'object') {
-                    var m = arg[i].name;
-                    var n = arg[i].value;
-                    Object.defineProperty(arg,m,{value : n, enumerable : true, writable : false, configurable:false});
-                }else
-                {
-                    Object.defineProperty(arg,arg[i],{value : n+1, enumerable : true, writable : false,configurable:false});
-                    i = arg[i];
-                }
-            }
-        return arg;
+        var val=0;
+        var obj=arg.reduce(function (result,item){
+        var key=item;
+        if (typeof item === 'object') {
+            val=item.value;
+            key=item.name;
+            result[key]=val++;
+        }else
+        {
+          result[key]=val++;
+        }
+            return result;
+       }, {});
+        return obj;
     }
-    window.createEnum=createEnum;
+    window.createEnum = createEnum;
 })();
+console.log(createEnum(['red',{name:'green', value:5},'blue']));
