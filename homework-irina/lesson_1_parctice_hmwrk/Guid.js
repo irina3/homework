@@ -1,3 +1,6 @@
-function Guid(){
-	return Math.random().toString(16).slice(2, 10)+"-"+Math.random().toString(16).slice(2, 6)+"-"+Math.random().toString(16).slice(2, 6)+"-"+Math.random().toString(16).slice(2, 6)+"-"+Math.random().toString(16).slice(2, 14)
+function s4() {
+    return Math.random().toString(16).slice(2, 6);
+}
+function guid() {
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4();
 }
