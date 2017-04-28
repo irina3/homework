@@ -1,13 +1,15 @@
 (function () {
     'use strict';
-    var f=function(a){
+    var f=function(a,b){
         if (a.__proto__!= null){
-            if (a.__proto__=== (typeof a).prototype){
+            if (a.__proto__=== b.prototype){
                 return true;
-            } else if(f(a.__proto__).__proto__===(typeof a).prototype){
-                    return true;
+            } else 
+            {
+                return f((a.__proto__),b);
             }
         } 
         return false;
     }
+    window.f=f;
 })();
