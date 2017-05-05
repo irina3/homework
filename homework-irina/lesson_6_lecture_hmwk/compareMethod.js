@@ -21,7 +21,7 @@ Range.prrototype.lt = function(rang){
     return false;
 };
 Range.prrototype.lte = function(rang){
-    if (this.to - this.from < = .to - rang.from){
+    if (this.to - this.from < = rang.to - rang.from){
         return true;
     }
     return false;
