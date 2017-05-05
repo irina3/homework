@@ -2,25 +2,25 @@ function Range(from, to) {
     this.from = from;
     this.to = to;
 }
-Range.prrototype.gt = function(rang){
+Range.prototype.gt = function(rang){
     if (this.to - this.from > rang.to - rang.from){
         return true;
     }
     return false;
 };
-Range.prrototype.gte = function(rang){
+Range.prototype.gte = function(rang){
     if (this.to - this.from > =rang.to - rang.from){
         return true;
     }
     return false;
 };
-Range.prrototype.lt = function(rang){
+Range.prototype.lt = function(rang){
     if (this.to - this.from < rang.to - rang.from){
         return true;
     }
     return false;
 };
-Range.prrototype.lte = function(rang){
+Range.prototype.lte = function(rang){
     if (this.to - this.from < = rang.to - rang.from){
         return true;
     }
