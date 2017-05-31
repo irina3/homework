@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our first project</title>
+
+</head>
+<body>
+<h1>My todo list</h1>
+<input id="new-task" type="text" name="fname">
+<button onclick="ToDoList.prototype.addToDoItem()">Add</button>
+<ul id="todo-list">
+    <!--<li><input type="checkbox" name="vehicle" value="Bike"> Task 1 <a href="">X</a></li>-->
+    <!--<li><input type="checkbox" name="vehicle" value="Bike"> Task 2 <a href="">X</a></li>-->
+    <!--<li><input type="checkbox" name="vehicle" value="Bike"> Task 3 <a href="">X</a></li>-->
+</ul>
+<div id="tasks-count">
+    <p id="all-tasks">All tasks: </p>0 Completed: 0
+</div>
+<br>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search for title.." >
+<p><input  id="radio1" name="all" type="radio" value="All" onclick="f1()" checked>All</p>
+<p><input id="radio2"  name="completed" type="radio" value="Completed"  onclick="f2()">Completed</p>
+<p><input  id="radio3" name="nonCompleted" type="radio" value="Non completed"  onclick="f3()">Non completed</p>
+<script src="main.js"></script>
+</body>
+</html>
