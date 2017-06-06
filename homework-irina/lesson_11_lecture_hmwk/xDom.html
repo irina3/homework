@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    .red {
+        color: red;
+    }
+</style>
+</head>
+<body>
+        <div id="id" class="player1">BBBB</div>
+        <div id="gameArea">
+            <div class="player1"><p>XXXX</p></div>
+            <div class="player2"></div> 
+        </div>
+    <script>
+    // Tasks
+    // 1. Make XDOM.select work with multiple elements
+    // 2. Should support "p#my-car .green p.small"
+    // 3. Make application error prone, if "#my-car p" element doesn't exist
+    //      XDOM.select("#my-car p") and XDOM.select("#my-car p").addClass... should not throw errors. 
+    var XDOM = {
+        select: function (selector) {
+            var selectors = selector.split(' '),
+                element = document;
+
+            for (var i = 0; i < selectors.length; i++) {
+                var s = selectors[i];
+
+                if (this.isTagSelector(s)) {
+                    element = element.getElementsByTagName(s)[0];
+                } else if (this.isIdSelector(s)) {
+                    element = element.getElementById(s.substring(1));
+                } else if (this.isClassSelector(s)) {
+                    element = element.getElementsByClassName(s.substring(1))[0];
+                } else if(s.indexOf('#') > 0 && s.indexOf('.') > 0) {
+                    var tag1 = s.substr(0,s.indexOf('#'));
+                    var id1 = s.substr(s.indexOf('#'), s.indexOf('.') - s.indexOf('#'));
+                    var class1 = s.substr(s.indexOf('.'),s.length-s.indexOf('.'));
+                    element = element.getElementsByTagName(tag1)[0];
+                }
+
+            }
+
+            return {
+                elements: [element],
+                addClass: function (className) {
+                    this.elements.forEach(function (e) {
+                        e.className += e.className.length ? (" " + className) : className;
+                    });
+                },
+                removeClass: function (className) {
+                    var index = this.elements.indexOf(className);
+                    if(index >= 0) {
+                        this.elements.splice(index, 1);
+                    }
+                    // Implement
+                    // PAY Attention your className might not be the most right one.
+                },
+                hasClass: function (className) {
+                    var index = this.elements.indexOf(className);
+                    return index >= 0;
+                    // Implement
+                    // PAY Attention that "red" and "redmond" classes are not the same.
+                },
+                toggleClass: function (className) {
+                    var index = this.elements.indexOf(className);
+                    if(index >= 0) {
+                        removeClass(className);
+                    } else {
+                        addClass(className);
+                    }
+                    // Implement
+                    // Using hasClass, addClass, removeClass.
+                }
+            };
+        },
+        isTagSelector: function (selector) {
+            return !this.isIdSelector(selector) && !this.isClassSelector(selector);
+        },
+        isIdSelector: function (selector) {
+            return selector[0] === '#';
+        },
+        isClassSelector: function (selector) {
+            return selector[0] === '.';
+        }
+    };
+
+    // console.log(XDOM.select('#gameArea'));
+    //console.log(XDOM.select('#gameArea .player1 p'));
+    //XDOM.select('#gameArea .player1 div').addClass('red');
+    </script>
+    </body>
+</html>

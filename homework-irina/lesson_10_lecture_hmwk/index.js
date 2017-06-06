@@ -47,9 +47,17 @@ window.onkeyup = function(e) {
    }else if (key == 87) {
     gameState1.pixel1.n-=10;
    }
-   if(key == 32) {
-    clearInterval(move);
-   }
+var paus = true;
+      if(key == 32) {
+        if(paus===true){
+          clearInterval(move);
+          pause = false;
+        } else if(paus === false) {
+         setInterval(move);
+         pause = true;
+        }
+    } 
+     
 
    var c = gameState1.pixel1.n
     var k = [c+10, c+20, c+30, c+40, c+50, c+60, c+70, c+80, c+90, c+100];
